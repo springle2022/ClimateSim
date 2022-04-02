@@ -1,4 +1,3 @@
-from curses.ascii import isdigit
 from tkinter import Misc, StringVar, Tk,Canvas,Label, Frame, Button,Text,Entry
 import random
 import time
@@ -182,7 +181,7 @@ class global_monitering():
         
         year = year_entry.get()
 
-        if isdigit(year): 
+        if true: #isdigit(year): 
 
             year = int(year)
 

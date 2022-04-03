@@ -192,7 +192,7 @@ class global_monitering():
             #ocean_temp_trend = trendline.find_linear_trend_from_list(ocean_temp_year, ocean_temp_data)
             ocean_temp_trend, ocean_temp_trend_K = trendline.get_trend_v2(path_to_here + "data/Ocean_Temp.txt","exponential",1.021,self.YEAR)
 
-            #Tornado_Trend = trendline.get_trend(path_to_here+"data\Tornadoes.txt")
+            #Tornado_Trend = trendline.get_trend(path_to_here+"data/Tornadoes.txt")
             #EE_Trend = Tornado_Trend # + others
 
 

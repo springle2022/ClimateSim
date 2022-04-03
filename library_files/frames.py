@@ -15,7 +15,7 @@ except:
 
 path_to_here = os.path.dirname(__file__)
 
-path_to_here = path_to_here[0:1-len("\library_files")]
+path_to_here = path_to_here[0:1-len("/library_files")]
 
 
 gui = gui.interface()
@@ -26,7 +26,7 @@ class global_monitering():
 
     #CO2_LEVELS = 416.0 #Carbon Dioxide Levels, Parts Per Million, source https://climate.nasa.gov/vital-signs/carbon-dioxide/
     
-    year, levels = trendline.get_data(path_to_here + "\data\Carbon_Dioxide_Post_Industrial.txt")
+    year, levels = trendline.get_data(path_to_here + "/data/Carbon_Dioxide_Post_Industrial.txt")
     CO2_LEVELS = round(levels[len(levels)-1],1)
     #print(CO2_LEVELS)
 
@@ -38,13 +38,13 @@ class global_monitering():
     #HIGH_TEMP_COUNT = 
     #LOW_TEMP_COUNT = 
     EXTREME_EVENTS_COUNT = TORNADO_COUNT #+ CYCLONE_COUNT #+ HIGH_TEMP_COUNT #+ LOW_TEMP_COUNT
-    TORNADO_CHANGE, TORNADO_CHANGE_K = trendline.get_trend_v2(path_to_here + "data\Tornadoes.txt","exponential",0.9791,YEAR)
+    TORNADO_CHANGE, TORNADO_CHANGE_K = trendline.get_trend_v2(path_to_here + "data/Tornadoes.txt","exponential",0.9791,YEAR)
     '''H2O_LEVELS = 0 #Water Vapor Levels, Parts Per Million
     N2O_LEVELS = 0 #Nitrous Oxide Levels, Parts Per Million
     CH4_LEVELS = 0 #Methane Levels, Parts Per Million'''
     
     CO2_EMMISIONS = 2.3 #Carbon Dioxide Emmisions, Parts Per Million, source https://www.climate.gov/news-features/understanding-climate/climate-change-atmospheric-carbon-dioxide
-    CO2_CHANGE, CO2_CHANGE_K = trendline.get_trend_v2(path_to_here + "data\Carbon_Dioxide_Post_Industrial.txt","exponential",1.02,YEAR)
+    CO2_CHANGE, CO2_CHANGE_K = trendline.get_trend_v2(path_to_here + "data/Carbon_Dioxide_Post_Industrial.txt","exponential",1.02,YEAR)
     
     '''H2O_EMMISIONS = 1 #Water Vapor Emmisions, Parts Per Million
     N2O_EMMISIONS = 1 #Nitrous Oxide Emmisions, Parts Per Million
@@ -55,22 +55,22 @@ class global_monitering():
     pH_CHANGE = 0.00375 # 0.3/80; predicted change, source https://ocean.si.edu/ocean-life/invertebrates/ocean-acidification 
 
     GLOBAL_SEA_LEVEL = 9.5  #Global Mean Sea Level, in millimeters, source: https://www.climate.gov/news-features/understanding-climate/climate-change-global-sea-level  
-    year, sealevels = trendline.get_data(path_to_here + "\data\Sea_Levels.txt")
+    year, sealevels = trendline.get_data(path_to_here + "/data/Sea_Levels.txt")
     GLOBAL_SEA_LEVEL = round(sealevels[len(sealevels)-1],1)
 
-    SEA_LEVEL_CHANGE, LEVEL_CHANGE_K = trendline.get_trend_v2(path_to_here + "data\Sea_Levels.txt","exponential",1.00825,YEAR)
+    SEA_LEVEL_CHANGE, LEVEL_CHANGE_K = trendline.get_trend_v2(path_to_here + "data/Sea_Levels.txt","exponential",1.00825,YEAR)
 
     #LEVEL_CHANGE = 3.6
 
     GLOBAL_TEMP = 1.02 #Global Temperature Anomally, in degrees celcius, source: https://climate.nasa.gov/vital-signs/global-temperature/ 
-    year, globaltemp = trendline.get_data(path_to_here + "\data\Temperature.txt")
+    year, globaltemp = trendline.get_data(path_to_here + "/data/Temperature.txt")
     GLOBAL_TEMP = round(globaltemp[len(globaltemp)-1],2)
 
-    #TEMP_CHANGE = trendline.get_trend(path_to_here + "data\Temperature.txt")
-    TEMP_CHANGE, TEMP_CHANGE_K = trendline.get_trend_v2(path_to_here + "data\Temperature.txt","exponential",1.025,YEAR)
+    #TEMP_CHANGE = trendline.get_trend(path_to_here + "data/Temperature.txt")
+    TEMP_CHANGE, TEMP_CHANGE_K = trendline.get_trend_v2(path_to_here + "data/Temperature.txt","exponential",1.025,YEAR)
 
-    '''print("CO2 (795,149 BCE - 1955 CE; Ice Cores): " + str(trendline.get_trend("data\Carbon_Dioxide_Pre_Industrial.txt")))
-    print("CO2 (1959 CE - 2015 CE; Direct): " + str(trendline.get_trend("data\Carbon_Dioxide_Post_Industrial.txt")))'''
+    '''print("CO2 (795,149 BCE - 1955 CE; Ice Cores): " + str(trendline.get_trend("data/Carbon_Dioxide_Pre_Industrial.txt")))
+    print("CO2 (1959 CE - 2015 CE; Direct): " + str(trendline.get_trend("data/Carbon_Dioxide_Post_Industrial.txt")))'''
 
     OCEAN_TEMP = 0.76
 
@@ -188,9 +188,9 @@ class global_monitering():
             gui.root.lift()
             #self.start(gui.root)
 
-            ocean_temp_year, ocean_temp_data = trendline.get_data(path_to_here+"data\\Ocean_Temp.txt")
+            ocean_temp_year, ocean_temp_data = trendline.get_data(path_to_here+"data/Ocean_Temp.txt")
             #ocean_temp_trend = trendline.find_linear_trend_from_list(ocean_temp_year, ocean_temp_data)
-            ocean_temp_trend, ocean_temp_trend_K = trendline.get_trend_v2(path_to_here + "data\Ocean_Temp.txt","exponential",1.021,self.YEAR)
+            ocean_temp_trend, ocean_temp_trend_K = trendline.get_trend_v2(path_to_here + "data/Ocean_Temp.txt","exponential",1.021,self.YEAR)
 
             #Tornado_Trend = trendline.get_trend(path_to_here+"data\Tornadoes.txt")
             #EE_Trend = Tornado_Trend # + others
